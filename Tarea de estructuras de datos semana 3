@@ -1,0 +1,102 @@
+using System;
+
+namespace FigurasGeometricas
+{
+    // Clase para representar un Círculo
+    public class Circulo
+    {
+        // Atributo para almacenar el radio del círculo
+        private double radio;
+
+        // Constructor para inicializar el radio del círculo
+        public Circulo(double radio)
+        {
+            this.radio = radio;
+        }
+
+        // Método para calcular el área del círculo
+        // Fórmula: A = π * r^2
+        public double CalcularArea()
+        {
+            return Math.PI * radio * radio;
+        }
+
+        // Método para calcular el perímetro del círculo
+        // Fórmula: P = 2 * π * r
+        public double CalcularPerimetro()
+        {
+            return 2 * Math.PI * radio;
+        }
+
+        // Método para obtener el radio del círculo
+        public double ObtenerRadio()
+        {
+            return radio;
+        }
+    }
+
+    // Clase para representar un Rectángulo
+    public class Rectangulo
+    {
+        // Atributos para almacenar el largo y el ancho del rectángulo
+        private double largo;
+        private double ancho;
+
+        // Constructor para inicializar el largo y el ancho del rectángulo
+        public Rectangulo(double largo, double ancho)
+        {
+            this.largo = largo;
+            this.ancho = ancho;
+        }
+
+        // Método para calcular el área del rectángulo
+        // Fórmula: A = largo * ancho
+        public double CalcularArea()
+        {
+            return largo * ancho;
+        }
+
+        // Método para calcular el perímetro del rectángulo
+        // Fórmula: P = 2 * (largo + ancho)
+        public double CalcularPerimetro()
+        {
+            return 2 * (largo + ancho);
+        }
+
+        // Métodos para obtener el largo y el ancho del rectángulo
+        public double ObtenerLargo()
+        {
+            return largo;
+        }
+
+        public double ObtenerAncho()
+        {
+            return ancho;
+        }
+    }
+
+    // Clase principal para probar las clases Circulo y Rectangulo
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Crear un objeto de la clase Circulo con radio 5
+            Circulo miCirculo = new Circulo(5);
+
+            // Mostrar el área y el perímetro del círculo
+            Console.WriteLine("Círculo:");
+            Console.WriteLine($"Área: {miCirculo.CalcularArea()}");
+            Console.WriteLine($"Perímetro: {miCirculo.CalcularPerimetro()}");
+
+            // Crear un objeto de la clase Rectangulo con largo 10 y ancho 4
+            Rectangulo miRectangulo = new Rectangulo(10, 4);
+
+            // Mostrar el área y el perímetro del rectángulo
+            Console.WriteLine("\nRectángulo:");
+            Console.WriteLine($"Área: {miRectangulo.CalcularArea()}");
+            Console.WriteLine($"Perímetro: {miRectangulo.CalcularPerimetro()}");
+
+            Console.ReadKey();
+        }
+    }
+}
